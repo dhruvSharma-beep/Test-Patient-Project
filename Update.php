@@ -32,14 +32,14 @@ require_once 'PatientFunction.php';
             <div class="col-md-8 ">
 
                 <?php
-                $O_Update_Patient_Details = new SinglePatientDetails();
-                $Patient_Id = $_GET['sid'];
-                $Q_Patient_sql = $O_Update_Patient_Details->ViewSinglePatient($Patient_Id);
-                while ($row = mysqli_fetch_array($Q_Patient_sql)) {
+                $oUpdatePatientDetails = new SinglePatientDetails();
+                $PatientId = $_GET['sid'];
+                $qPatientSql = $oUpdatePatientDetails->ViewSinglePatient($PatientId);
+                while ($row = mysqli_fetch_array($qPatientSql)) {
                 ?>
                     <!-- FORM -->
                     <form method="POST" id="form">
-                        <input type="hidden" value="<?php echo $Patient_Id; ?>" id="Patient_Id">
+                        <input type="hidden" value="<?php echo $PatientId; ?>" id="Patient_Id">
                         <div class="form-row pb-4">
                             <div class="col">
                                 <label class="form-label">First Name</label>
@@ -52,7 +52,7 @@ require_once 'PatientFunction.php';
                         </div>
                         <div class="form-group">
                             <label class="form-label">Email</label>
-                            <input type="email" name="Email_Id" class="form-control" placeholder="Email" id="Email_Id" value="<?php echo $row['E_mail']; ?>">
+                            <input type="email" name="Email_Id" class="form-control" placeholder="Email" id="Email_Id" value="<?php echo $row['Email']; ?>">
                         </div>
                         <div class="form-group">
                             <label class="form-label">Mobile No.</label>
@@ -60,22 +60,22 @@ require_once 'PatientFunction.php';
                         </div>
                         <div class="form-group">
                             <label class="form-label">Address</label>
-                            <textarea class="form-control" name="A_ddress" placeholder="Address" style="resize:none" id="A_ddress"><?php echo $row['A_ddress']; ?> </textarea>
+                            <textarea class="form-control" name="A_ddress" placeholder="Address" style="resize:none" id="Address"><?php echo $row['Address']; ?> </textarea>
                         </div>
                         <div class="form-row pb-4">
                             <div class="col-md-6">
                                 <label class="form-label">DOB</label>
-                                <input type="date" class="form-control" name="D_ob" placeholder="DOB" id="D_ob" value="<?php echo $row['D_ob']; ?>">
+                                <input type="date" class="form-control" name="D_ob" placeholder="DOB" id="Dob" value="<?php echo $row['Dob']; ?>">
                             </div>
                             <div class="col-md-6">
                                 <label class="form-label">Gender</label>
                                 <div class="col form-check form-check-inline pl-2">
-                                    <span> <input class="form-check-input" type="radio" name="G_ender" id="G_ender" value="M" <?php if ($row['G_ender'] == "M") {
+                                    <span> <input class="form-check-input" type="radio" name="Gender" id="Gender" value="M" <?php if ($row['Gender'] == "M") {
                                                                                                                                     echo "checked";
                                                                                                                                 } ?>>
                                         <label class="form-check-label">Male</label>
                                     </span>
-                                    <span class="pl-5"> <input class="form-check-input" type="radio" name="G_ender" id="G_ender" value="F" <?php if ($row['G_ender'] == "F") {
+                                    <span class="pl-5"> <input class="form-check-input" type="radio" name="Gender" id="Gender" value="F" <?php if ($row['Gender'] == "F") {
                                                                                                                                                 echo "checked";
                                                                                                                                             } ?>>
                                         <label class="form-check-label">Female</label>
