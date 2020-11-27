@@ -4,9 +4,9 @@
 require_once 'PatientFunction.php';
 
 
-$I_Patient_ViewId = $_GET['sid'];
-$O_Patient_View = new SinglePatientDetails();
-$Q_Sql = $O_Patient_View->ViewSinglePatient($I_Patient_ViewId);
+$iPatientViewId = $_GET['sid'];
+$oPatientView = new SinglePatientDetails();
+$qSql = $oPatientView->ViewSinglePatient($iPatientViewId);
 
 ?>
 <!-- PHP -->
@@ -32,15 +32,15 @@ $Q_Sql = $O_Patient_View->ViewSinglePatient($I_Patient_ViewId);
 		<div class="row">
 			<div class="col-md-2"></div>
 			<div class="card col-md-8">
-				<?php while ($row = mysqli_fetch_array($Q_Sql)) { ?>
+				<?php while ($row = mysqli_fetch_array($qSql)) { ?>
 					<div class="card-body">
 						First Name : <?php echo $row['First_Name']; ?></br>
 						Last Name : <?php echo $row['Last_Name']; ?></br>
-						Email : <?php echo $row['E_mail']; ?></br>
-						Address : <?php echo $row['A_ddress']; ?></br>
+						Email : <?php echo $row['Email']; ?></br>
+						Address : <?php echo $row['Address']; ?></br>
 						Mobile No : <?php echo $row['Mobile_Number']; ?></br>
-						Gender : <?php echo $row['G_ender']; ?></br>
-						DOB : <?php echo $row['D_ob']; ?></br>
+						Gender : <?php echo $row['Gender']; ?></br>
+						DOB : <?php echo $row['Dob']; ?></br>
 					</div>
 				<?php } ?>
 				<a href="Show.php"><button class="btn btn-info float-right">Go Back</button></a>
