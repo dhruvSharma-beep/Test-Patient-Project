@@ -40,7 +40,7 @@ require_once 'PatientFunction.php';
                     </div>
                     <div class="form-group">
                         <label class="form-label">Email</label>
-                        <input type="email" required class="form-control" placeholder="Email" id="Email_Id" name="Email">
+                        <input type="email" required class="form-control" placeholder="Email" id="Email_Id" name="Email_Id">
                     </div>
                     <div class="form-group">
                         <label class="form-label">Mobile No.</label>
@@ -48,12 +48,12 @@ require_once 'PatientFunction.php';
                     </div>
                     <div class="form-group">
                         <label class="form-label">Address</label>
-                        <textarea class="form-control" placeholder="Address" style="resize:none" id="A_ddress" name="Address"></textarea>
+                        <textarea class="form-control" placeholder="Address" style="resize:none" id="Address" name="Address"></textarea>
                     </div>
                     <div class="form-row pb-4">
                         <div class="col-md-6">
                             <label class="form-label">DOB</label>
-                            <input type="date" class="form-control" placeholder="DOB" id="D_ob" name="Dob">
+                            <input type="date" class="form-control" placeholder="DOB" id="Dob" name="Dob">
                         </div>
                         <div class="col-md-6">
                             <label class="form-label">Gender</label>
