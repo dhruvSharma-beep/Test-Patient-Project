@@ -148,9 +148,9 @@
         sLastName = $("#Last_Name").val();
         sEmail = $("#Email_Id").val();
         iContactNo = $("#Contact_No").val();
-        sAddress = $("#A_ddress").val();
-        dDob = $("#D_ob").val();
-        bGender = $('input[name=G_ender]:checked').val();
+        sAddress = $("#Address").val();
+        dDob = $("#Dob").val();
+        bGender = $('input[name=Gender]:checked').val();
         aUpdateData ={
             iPatientId: iId,
             First_Name: sFirstName,
