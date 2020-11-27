@@ -37,26 +37,26 @@
     {
             e.preventDefault();
             console.log("saave button clicked");
-            S_First_Name     = $("#First_Name").val();
-            S_Last_Name     = $("#Last_Name").val();
-            S_Email_Id   = $("#Email_Id").val();
-            I_Contact_No = $("#Contact_No").val();
-            S_Address   = $("#A_ddress").val();
-            D_Dob       = $("#D_ob").val();
-            B_Gender    = $('input[name=Ge_nder]:checked').val();
-            A_Insert_Data    ={
-                S_First_Name: S_First_Name,
-                S_Last_Name: S_Last_Name,
-                S_Email_Id: S_Email_Id,
-                I_Contact_No: I_Contact_No,
-                S_Address: S_Address,
-                D_Dob: D_Dob,
-                B_Gender: B_Gender
+            First_Name     = $("#First_Name").val();
+            Last_Name     = $("#Last_Name").val();
+            Email   = $("#Email_Id").val();
+            Contact_No = $("#Contact_No").val();
+            Address   = $("#Address").val();
+            Dob       = $("#Dob").val();
+            Gender    = $('input[name=Gender]:checked').val();
+            aInsertData    ={
+                sFirstName: First_Name,
+                sLastName: Last_Name,
+                sEmailId: Email,
+                iContactNo: Contact_No,
+                sAddress: Address,
+                dDob: Dob,
+                bGender: Gender
                      };
             $.ajax({
                     url:"InsertPatientEmulator.php",
                     type:'POST',
-                    data:JSON.stringify(A_Insert_Data),
+                    data:JSON.stringify(aInsertData),
                     success:function(data){
                         $("#form")[0].reset();
                         $.notify(data,"success","autoHideDelay:500",{position:"top right"});
@@ -143,33 +143,33 @@
     {
         e.preventDefault();
         console.log("update button is click");
-        I_Patient_id = $("#Patient_Id").val();
-        S_First_Name = $("#First_Name").val();
-        S_Last_Name = $("#Last_Name").val();
-        S_Email_Id = $("#Email_Id").val();
-        I_Contact_No = $("#Contact_No").val();
-        S_Address = $("#A_ddress").val();
-        D_Dob = $("#D_ob").val();
-        B_Gender = $('input[name=G_ender]:checked').val();
-        A_Update_Data ={
-            I_Patient_id: I_Patient_id,
-            S_First_Name: S_First_Name,
-            S_Last_Name: S_Last_Name,
-            S_Email_Id: S_Email_Id,
-            I_Contact_No: I_Contact_No,
-            S_Address: S_Address,
-            D_Dob: D_Dob,
-            B_Gender: B_Gender
+        iId = $("#Patient_Id").val();
+        sFirstName = $("#First_Name").val();
+        sLastName = $("#Last_Name").val();
+        sEmail = $("#Email_Id").val();
+        iContactNo = $("#Contact_No").val();
+        sAddress = $("#A_ddress").val();
+        dDob = $("#D_ob").val();
+        bGender = $('input[name=G_ender]:checked').val();
+        aUpdateData ={
+            iPatientId: iId,
+            First_Name: sFirstName,
+            Last_Name: sLastName,
+            Email: sEmail,
+            MobileNumber: iContactNo,
+            Address: sAddress,
+            Dob: dDob,
+            Gender: bGender
         };
         $.ajax({
             url: "UpdatePatientEmulator.php",
             type: 'POST',
-            data: JSON.stringify(A_Update_Data),
+            data: JSON.stringify(aUpdateData),
             success: function(data){
                 $.notify(data, "data updated successfully", "autoHideDelay:500", {
                  position: "top right"
 });
-                    location.href = "View.php?sid=" + I_Patient_id;
+                    location.href = "View.php?sid=" + iId;
                 },
             });
     });
