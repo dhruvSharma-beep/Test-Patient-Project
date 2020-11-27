@@ -21,13 +21,6 @@
                     for(i=0; i<x.length; i++){
                         limit   = limit + 1;
                         id      = x[i].id ;
-                        // fname   = x[i].First_Name;
-                        // lname   = x[i].Last_Name;
-                        // email   = x[i].E_mail;
-                        // contact = x[i].Mobile_Number;
-                        // address = x[i].A_ddress;
-                        // dob     = x[i].D_ob;
-                        // gender  = x[i].G_ender;
                         output += "<tr><td>" + limit + "</td><td>" + x[i].First_Name + "</td><td>" +x[i].Last_Name+ "</td><td>" + x[i].E_mail + "</td><td>" + x[i].Mobile_Number+ "</td><td>" +x[i].A_ddress+ "</td><td>" +x[i].D_ob+ "</td><td>" + x[i].G_ender + 
                                 "</td><td> <button class='btn btn-danger btn-sm deleteid' sid="+id+"><i style='font-size:20px; color:black;' class='fa fa-trash-o'></i></button> <button class='btn btn-warning btn-sm edit' sid="+id+"><a><i style=' font-size:20px; color:black' class='fa fa-pencil fa-fw'></i></a></button>  <button class='btn btn-info btn-sm viewid' sid="+id+"><i style='font-size:20px; color:black' class='fa fa-eye' aria-hidden='true'></i></button></td></tr>";
                     
@@ -77,8 +70,8 @@
     $('#tbody').on("click", ".deleteid", function()
     {
             console.log("delete button is click");
-            I_Patient_id = $(this).attr("sid");
-            A_Delete_Data ={I_Patient_Delete_Id:I_Patient_id};
+            iPatientId = $(this).attr("sid");
+            aDeleteData ={iPatientDeleteId:iPatientId};
             Patient_this = this;
             bootbox.confirm({
             message: " Are you sure you want to delete?",
@@ -92,7 +85,7 @@
                     $.ajax({
                             url:"DeletePatientEmulator.php",
                             method:"POST",
-                            data:JSON.stringify(A_Delete_Data),
+                            data:JSON.stringify(aDeleteData),
                             success:function(data){
                                 $(Patient_this).closest("tr").fadeOut();
                                 setInterval('location.reload()', 50);
