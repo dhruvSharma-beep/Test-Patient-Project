@@ -3,7 +3,7 @@
 $oDeletePatient = new DeletePatient;
 $PatientDelete = (file_get_contents("php://input"));
 $jPatientDelete = json_decode($PatientDelete, true);
-$iDeleteId = $jPatientDelete['PatientDeleteId'];
+$iDeleteId = $jPatientDelete['iPatientDeleteId'];
 
 
 if (!empty($iDeleteId)) {
