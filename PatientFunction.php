@@ -20,10 +20,10 @@ class DB_con
 
 class InsertPatient extends DB_con
 {
-	public function InsertPatientData($V_First_Name, $V_Last_Name, $V_Email_Id, $V_Contact_No, $V_Address, $D_Dob, $E_Gender)
+	public function InsertPatientData($vFirstName, $vLastName, $vEmailId, $vContactNo, $vAddress, $dDob, $eGender)
 	{
-		$Q_Insert_Patient = mysqli_query($this->dbh, "insert into tbl_users(First_Name,Last_Name,E_mail,Mobile_Number,A_ddress,D_ob,G_ender) values('$V_First_Name','$V_Last_Name','$V_Email_Id','$V_Contact_No','$V_Address','$D_Dob','$E_Gender')");
-		return $Q_Insert_Patient;
+		$qInsertPatient = mysqli_query($this->dbh, "insert into tbl_users(First_Name,Last_Name,Email,Mobile_Number,Address,Dob,Gender) values('$vFirstName','$vLastName','$vEmailId','$vContactNo','$vAddress','$dDob','$eGender')");
+		return $qInsertPatient;
 	}
 }
 
@@ -31,34 +31,34 @@ class PatientDetails extends DB_con
 {
 	public function FetchPatientDetails()
 	{
-		$Q_Patient_Details = mysqli_query($this->dbh, "select * from tbl_users where Deleted=0 ORDER BY First_Name ASC");
-		return $Q_Patient_Details;
+		$qPatientDetails = mysqli_query($this->dbh, "select * from tbl_users where Deleted=0 ORDER BY First_Name ASC");
+		return $qPatientDetails;
 	}
 }
 
 class SinglePatientDetails extends DB_con
 {
-	public function ViewSinglePatient($Single_Patient_Id)
+	public function ViewSinglePatient($iSinglePatientId)
 	{
-		$Single_Patient_Result = mysqli_query($this->dbh, "select * from tbl_users where id=$Single_Patient_Id");
-		return $Single_Patient_Result;
+		$qSinglePatientResult = mysqli_query($this->dbh, "select * from tbl_users where id=$iSinglePatientId");
+		return $qSinglePatientResult;
 	}
 }
 
 class UpdatePatientDetails extends DB_con
 {
-	public function PatientUpdate($V_First_Name, $V_Last_Name, $V_Email_Id, $V_Contact_No, $V_Address, $D_Dob, $E_Gender, $Patientid)
+	public function PatientUpdate($vFirstName, $vLastName, $vEmailId, $vContactNo, $vAddress, $dDob, $eGender, $iPatientId)
 	{
-		$Q_Update_Record = mysqli_query($this->dbh, "update  tbl_users set First_Name='$V_First_Name',Last_Name='$V_Last_Name',E_mail='$V_Email_Id',Mobile_Number='$V_Contact_No',A_ddress='$V_Address',D_ob='$D_Dob',G_ender='$E_Gender' where id='$Patientid' ");
-		return $Q_Update_Record;
+		$qUpdateRecord = mysqli_query($this->dbh, "update  tbl_users set First_Name='$vFirstName',Last_Name='$vLastName',Email='$vEmailId',Mobile_Number='$vContactNo',Address='$vAddress',Dob='$dDob',Gender='$eGender' where id='$iPatientid' ");
+		return $qUpdateRecord;
 	}
 }
 
 class DeletePatient extends DB_con
 {
-	public function DeletePatientData($Patient_Delete_Id)
+	public function DeletePatientData($iPatientDeleteId)
 	{
-		$Q_Delete_Record = mysqli_query($this->dbh, "update  tbl_users set Deleted=1, Added_By=1 where id=$Patient_Delete_Id");
-		return $Q_Delete_Record;
+		$qDeleteRecord = mysqli_query($this->dbh, "update  tbl_users set Deleted=1, Added_By=1 where id=$iPatientDeleteId");
+		return $qDeleteRecord;
 	}
 }
