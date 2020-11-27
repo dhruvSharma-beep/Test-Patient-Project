@@ -40,7 +40,7 @@ require_once 'PatientFunction.php';
                     </div>
                     <div class="form-group">
                         <label class="form-label">Email</label>
-                        <input type="email" required class="form-control" placeholder="Email" id="Email_Id" name="Email_Id">
+                        <input type="email" required class="form-control" placeholder="Email" id="Email_Id" name="Email">
                     </div>
                     <div class="form-group">
                         <label class="form-label">Mobile No.</label>
@@ -48,20 +48,20 @@ require_once 'PatientFunction.php';
                     </div>
                     <div class="form-group">
                         <label class="form-label">Address</label>
-                        <textarea class="form-control" placeholder="Address" style="resize:none" id="A_ddress" name="A_ddress"></textarea>
+                        <textarea class="form-control" placeholder="Address" style="resize:none" id="A_ddress" name="Address"></textarea>
                     </div>
                     <div class="form-row pb-4">
                         <div class="col-md-6">
                             <label class="form-label">DOB</label>
-                            <input type="date" class="form-control" placeholder="DOB" id="D_ob" name="D_ob">
+                            <input type="date" class="form-control" placeholder="DOB" id="D_ob" name="Dob">
                         </div>
                         <div class="col-md-6">
                             <label class="form-label">Gender</label>
                             <div class="col form-check form-check-inline pl-2">
-                                <span> <input class="form-check-input" type="radio" name="Ge_nder" value="M" id="Ge_nder">
+                                <span> <input class="form-check-input" type="radio" name="Gender" value="M" id="Gender">
                                     <label class="form-check-label">Male</label>
                                 </span>
-                                <span class="pl-5"> <input class="form-check-input" type="radio" name="Ge_nder" value="F" id="Ge_nder">
+                                <span class="pl-5"> <input class="form-check-input" type="radio" name="Gender" value="F" id="Gender">
                                     <label class="form-check-label">Female</label>
                                 </span>
                             </div>
