@@ -105,15 +105,15 @@
     $('tbody').on("click", ".edit", function()
     {
             console.log('Edit Button is clicked');
-            I_Edit_Patient_id = $(this).attr('sid');
-            A_Patient={I_Edit_Patient_id:I_Edit_Patient_id};
+            EditPatientId = $(this).attr('sid');
+            aPatient={iEditPatientId:EditPatientId};
             $.ajax({
                     url:"EditPatientEmulator.php",
                     method:"POST",
                     dataType:"json",
-                    data:JSON.stringify(A_Patient),
+                    data:JSON.stringify(aPatient),
                     success:function(data){            
-                         location.href="Update.php?sid="+I_Edit_Patient_id;         
+                         location.href="Update.php?sid="+iEditPatientId;         
                    },
                   });
     });
@@ -123,15 +123,15 @@
     $('#tbody').on("click", ".viewid", function()
     {
             console.log("view button is clicked");
-            I_Edit_Patient_id= $(this).attr('sid'); 
-            mydata={I_Edit_Patient_id:I_Edit_Patient_id};  
+            iEditPatientId= $(this).attr('sid'); 
+            aPatient={iEditPatientId:EditPatientId};  
             $.ajax({
                     url:"EditPatientEmulator.php",
                     method:"POST",
                     dataType:"json",
-                    data: JSON.stringify(mydata),
+                    data: JSON.stringify(aPatient),
                     success:function(data){
-                         location.href="View.php?sid="+I_Edit_Patient_id;
+                         location.href="View.php?sid="+iEditPatientId;
                     },
                    });
           
