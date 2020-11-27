@@ -1,11 +1,11 @@
 <?php
 require_once 'PatientFunction.php';
 
-$edit = new SinglePatientDetails;
-$editdata = (file_get_contents("php://input"));
-$editmydata = json_decode($editdata, true);
-$viewid = $editmydata['I_Edit_Patient_id'];
+$oEditPatient = new SinglePatientDetails;
+$EditData = (file_get_contents("php://input"));
+$jEditPatientData = json_decode($EditData, true);
+$iViewPatientId = $jEditPatientData['iEditPatientId'];
 
-$sqledit = $edit->ViewSinglePatient($viewid);
-$row = mysqli_fetch_assoc($sqledit);
-echo json_encode($row);
+$qSqlEdit = $oEditPatient->ViewSinglePatient($iViewPatientId);
+$Row = mysqli_fetch_assoc($qSqlEdit);
+echo json_encode($Row);
